@@ -14,5 +14,11 @@ services:
     restart: unless-stopped
     ports:
       - "25565:25565"
+      - "8123:8123"
     volumes:
       - "${WORLDS_ROOT}:/minecraft/server/worlds"
+      - "${PLUGINS_ROOT}/Essentials:/minecraft/server/plugins/Essentials"
+      - "${PLUGINS_ROOT}/LuckPerms:/minecraft/server/plugins/LuckPerms"
+      - "${PLUGINS_ROOT}/Vault:/minecraft/server/plugins/Vault"
+      - "${PLUGINS_ROOT}/bStats:/minecraft/server/plugins/bStats"
+      - "${PLUGINS_ROOT}/dynmap:/minecraft/server/plugins/dynmap"
