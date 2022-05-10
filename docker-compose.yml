@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  minecraft:
+    container_name: minecraft
+    build:
+      context: './'
+      dockerfile: 'Dockerfile'
+    environment:
+      XMS: "${XMS}"
+      XMX: "${XMX}"
+    restart: unless-stopped
+    ports:
+      - "25565:25565"
+    volumes:
+      - "${SERVER_ROOT}/world/:/minecraft/server/world"
+      - "${SERVER_ROOT}/world_nether/:/minecraft/server/world_nether"
+      - "${SERVER_ROOT}/world_the_end/:/minecraft/server/world_the_end"
