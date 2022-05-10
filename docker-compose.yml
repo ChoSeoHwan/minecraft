@@ -15,6 +15,4 @@ services:
     ports:
       - "25565:25565"
     volumes:
-      - "${SERVER_ROOT}/world/:/minecraft/server/world"
-      - "${SERVER_ROOT}/world_nether/:/minecraft/server/world_nether"
-      - "${SERVER_ROOT}/world_the_end/:/minecraft/server/world_the_end"
+      - "${WORLDS_ROOT}:/minecraft/server/worlds"
