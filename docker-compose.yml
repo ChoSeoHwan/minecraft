@@ -21,4 +21,5 @@ services:
       - "${PLUGINS_ROOT}/LuckPerms:/minecraft/server/plugins/LuckPerms"
       - "${PLUGINS_ROOT}/Vault:/minecraft/server/plugins/Vault"
       - "${PLUGINS_ROOT}/bStats:/minecraft/server/plugins/bStats"
-      - "${PLUGINS_ROOT}/dynmap:/minecraft/server/plugins/dynmap"
+      - "${PLUGINS_ROOT}/AntiCreeper:/minecraft/server/plugins/AntiCreeper"
+      - "${PLUGINS_ROOT}/PluginMetrics:/minecraft/server/plugins/PluginMetrics"
