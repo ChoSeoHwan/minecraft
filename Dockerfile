@@ -1,10 +1,17 @@
 FROM openjdk:17
 
-# 서버 구동 파일 전달
 WORKDIR /minecraft/server/
-COPY server/paper-1.19.4-522.jar ./server.jar
-COPY configs ./
-COPY plugins/ ./plugins/
 
-CMD ["java -Xms$XMS -Xmx$XMX -jar server.jar"]
+ENV VERSION="1.19.2-43.2.0"
+
+# 마크 서버 기본 세팅
+COPY server/forge-${VERSION}-installer.jar ./installer.jar
+RUN java -jar installer.jar --installServer
+
+# 기본 파일 세팅
+COPY configs ./
+COPY mods ./mods
+
+# 실행
+CMD ["./run.sh"]
 ENTRYPOINT ["/bin/bash", "-c"]
