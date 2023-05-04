@@ -2,6 +2,7 @@ version: '3'
 
 services:
   minecraft:
+    image: "wtae1216/minecraft_forge:${VERSION}"
     container_name: minecraft
     stdin_open: true
     tty: true
@@ -15,9 +16,3 @@ services:
     volumes:
       - "${WORLD_ROOT}:/minecraft/server/world"
       - "${CONFIG_ROOT}:/minecraft/server/config"
-
-networks:
-  default:
-    driver: bridge
-    driver_opts:
-      com.docker.network.driver.mtu: 1454
