@@ -2,8 +2,6 @@ FROM openjdk:17
 
 WORKDIR /minecraft/server/
 
-ENV VERSION="1.19.2-43.2.0"
-
 # 마크 서버 기본 세팅
 COPY server/ ./
 RUN chmod +x ./run.sh
